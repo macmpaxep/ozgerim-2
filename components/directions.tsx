@@ -1,81 +1,66 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { directions } from "@/lib/data";
-import { DirIcon } from "./icons";
-import { Reveal, SectionHead } from "./ui";
+import { ArrowRight } from "lucide-react";
+import { directions, photos } from "@/lib/data";
 
 export function Directions() {
   return (
-    <section id="directions" className="relative scroll-mt-20 py-28 md:py-40">
-      <div className="mx-auto max-w-7xl px-6">
-        <SectionHead
-          eyebrow="Направления"
-          title={
-            <>
-              Пять сфер — <span className="gold-text italic">одна экосистема</span>
-            </>
-          }
-          text="Каждое направление усиливает остальные: капитал финансирует девелопмент, строительство создаёт активы, а прибыль возвращается обществу и идеям."
-        />
+    <section id="directions" className="section section--white">
+      <div className="wrap">
+        <div className="head">
+          <h2 className="h2">Пять направлений холдинга</h2>
+          <p className="lede">
+            Каждое направление ведёт отдельная команда. Общие — стандарты отчётности и подход к
+            рискам.
+          </p>
+        </div>
 
-        <div className="mt-20 grid gap-5 md:grid-cols-6">
+        <div className="ledger">
           {directions.map((d, i) => {
-            const wide = i < 2; // first two larger
+            const p = photos[d.slug as keyof typeof photos];
             return (
-              <Reveal
-                key={d.slug}
-                delay={i * 90}
-                className={wide ? "md:col-span-3" : "md:col-span-2"}
-              >
-                <Link
-                  href={`/directions/${d.slug}`}
-                  className="group relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-3xl border border-line bg-panel p-8 transition duration-500 hover:-translate-y-1.5 hover:border-[color:var(--a)]/60"
-                  style={{ "--a": d.accent } as React.CSSProperties}
-                >
-                  <div
-                    className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100"
-                    style={{
-                      background: `radial-gradient(80% 70% at 100% 0%, ${d.accent}30, transparent 65%)`,
-                    }}
-                  />
-                  <DirIcon
-                    name={d.icon}
-                    className="absolute -bottom-10 -right-8 h-56 w-56 opacity-[0.07] transition duration-700 group-hover:scale-110 group-hover:opacity-[0.16]"
-                  />
-
-                  <div className="relative flex items-start justify-between">
-                    <span
-                      className="grid h-14 w-14 place-items-center rounded-2xl border"
-                      style={{ borderColor: `${d.accent}55`, color: d.accent }}
-                    >
-                      <DirIcon name={d.icon} className="h-7 w-7" />
-                    </span>
-                    <span className="text-xs tracking-[0.3em] text-muted">
-                      0{i + 1}
-                    </span>
-                  </div>
-
-                  <div className="relative mt-16">
-                    <div className="text-xs uppercase tracking-[0.25em]" style={{ color: d.accent }}>
-                      {d.short}
-                    </div>
-                    <h3 className="mt-3 font-serif text-2xl leading-tight [overflow-wrap:anywhere] xl:text-3xl">{d.title}</h3>
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">{d.tagline}</p>
-                    <div className="mt-6 flex items-center justify-between border-t border-line pt-5 text-sm">
-                      <span className="text-muted">{d.projects.length} проекта в портфолио</span>
-                      <span
-                        className="inline-flex items-center gap-1.5 transition group-hover:gap-3"
-                        style={{ color: d.accent }}
-                      >
-                        Открыть <ArrowUpRight size={16} />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </Reveal>
+              <Link key={d.slug} href={`/directions/${d.slug}`} className="ledger__row">
+                <span className="ledger__no">0{i + 1}</span>
+                <div>
+                  <h3 className="h3">{d.title}</h3>
+                  <p style={{ marginTop: 4 }}>{d.short}</p>
+                </div>
+                <p>{d.tagline}</p>
+                <div className="photo">
+                  <Image src={p.src} width={p.w} height={p.h} alt={p.alt} sizes="(max-width: 860px) 100vw, 220px" />
+                </div>
+                <ArrowRight className="ledger__arrow" size={20} aria-hidden />
+              </Link>
             );
           })}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function Numbers() {
+  const rows = [
+    { v: "1,2 млн", l: "квадратных метров построено" },
+    { v: "50 000+", l: "проданных книг" },
+    { v: "5 000+", l: "получателей помощи" },
+    { v: "9", l: "объектов недвижимости в портфеле" },
+  ];
+  return (
+    <section className="section section--night on-night" aria-label="Холдинг в цифрах">
+      <div className="wrap">
+        <div className="head">
+          <h2 className="h2">Что холдинг сделал к сегодняшнему дню</h2>
+          <p className="lede">Показатели по направлениям на последнюю отчётную дату.</p>
+        </div>
+        <dl className="numbers">
+          {rows.map((r) => (
+            <div key={r.l}>
+              <dt>{r.v}</dt>
+              <dd>{r.l}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

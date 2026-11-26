@@ -392,3 +392,16 @@ export const getDirection = (slug: string) =>
 export const allProjects = directions.flatMap((d) =>
   d.projects.map((p) => ({ ...p, directionSlug: d.slug, directionTitle: d.title, accent: d.accent, icon: d.icon })),
 );
+
+/** Фото-заглушки (Wikimedia Commons). Заменить собственными фотографиями холдинга. */
+export const photos = {
+  hero: { src: "/images/stock/photo-f179168349.jpg", w: 1280, h: 719, alt: "Панорама Алматы с видом на горы" },
+  "hedge-funds": { src: "/images/stock/photo-f61879170.jpg", w: 1280, h: 853, alt: "Тёмный стеклянный фасад офисной башни" },
+  "real-estate": { src: "/images/stock/photo-f122080046.jpg", w: 1280, h: 853, alt: "Жилой дом с балконами в солнечный день" },
+  construction: { src: "/images/stock/photo-f76729030.jpg", w: 1280, h: 1085, alt: "Башенный кран над строящимся зданием" },
+  charity: { src: "/images/stock/photo-f149479222-960.jpg", w: 960, h: 722, alt: "Школьный класс с партами и доской" },
+  publishing: { src: "/images/stock/photo-f194784524-960.jpg", w: 960, h: 640, alt: "Стеллажи с книгами в библиотеке" },
+} as const;
+
+export const photoCredits =
+  "Фото: Dauren Nabijan (CC0), Mike Wilson (CC0), Liilia Moroz (CC BY-SA 4.0), Henning Schlottmann (CC BY-SA 4.0), Harrison Keely (CC BY 4.0), Shixart1985 (CC BY 2.0) — Wikimedia Commons";

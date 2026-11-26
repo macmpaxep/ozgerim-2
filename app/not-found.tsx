@@ -2,16 +2,20 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="grid min-h-screen place-items-center px-6 text-center">
-      <div>
-        <div className="gold-text font-serif text-8xl">404</div>
-        <p className="mt-4 text-muted">Страница не найдена</p>
-        <Link
-          href="/"
-          className="mt-8 inline-block rounded-full bg-gold px-8 py-3 font-medium text-black"
-        >
-          На главную
-        </Link>
+    <main className="section" style={{ minHeight: "100svh" }}>
+      <div className="wrap">
+        <p className="kicker">Ошибка 404</p>
+        <h1 className="h1" style={{ marginTop: 12 }}>
+          Такой страницы нет
+        </h1>
+        <p className="lede" style={{ marginTop: 20 }}>
+          Возможно, адрес изменился. Вернитесь на главную и выберите направление.
+        </p>
+        <div className="hero__actions">
+          <Link href="/" className="btn">
+            На главную
+          </Link>
+        </div>
       </div>
     </main>
   );

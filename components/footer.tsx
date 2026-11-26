@@ -1,45 +1,47 @@
 import Link from "next/link";
-import { directions, company } from "@/lib/data";
-import { Logo } from "./header";
+import { directions, company, photoCredits } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-ink-2">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
-        <div>
-          <Logo />
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted">
-            Многопрофильный холдинг: капитал, девелопмент, строительство, социальные проекты и
-            издательство под одним брендом.
-          </p>
-        </div>
-        <div>
-          <h4 className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">Направления</h4>
-          <ul className="space-y-3 text-sm text-muted">
-            {directions.map((d) => (
-              <li key={d.slug}>
-                <Link href={`/directions/${d.slug}`} className="transition hover:text-gold-soft">
-                  {d.title}
-                </Link>
+    <footer className="footer on-night">
+      <div className="wrap">
+        <div className="footer__grid">
+          <div>
+            <span className="logo">
+              Özgerim <small style={{ color: "var(--night-muted)" }}>Holding</small>
+            </span>
+            <p style={{ marginTop: 12, maxWidth: "26em", color: "var(--night-muted)", fontSize: "0.95rem" }}>
+              Фонды, недвижимость, строительство, социальные проекты и издательство.
+            </p>
+          </div>
+          <div>
+            <h4>Направления</h4>
+            <ul>
+              {directions.map((d) => (
+                <li key={d.slug}>
+                  <Link href={`/directions/${d.slug}`}>{d.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4>Контакты</h4>
+            <ul>
+              <li>
+                <span>{company.city}</span>
               </li>
-            ))}
-          </ul>
+              <li>
+                <a href={`mailto:${company.email}`}>{company.email}</a>
+              </li>
+              <li>
+                <span>{company.phone}</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4 className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">Контакты</h4>
-          <ul className="space-y-3 text-sm text-muted">
-            <li>{company.city}</li>
-            <li>
-              <a href={`mailto:${company.email}`} className="transition hover:text-gold-soft">
-                {company.email}
-              </a>
-            </li>
-            <li>{company.phone}</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-line py-6 text-center text-xs text-muted">
-        © {new Date().getFullYear()} Özgerim Holding. Все права защищены.
+        <p className="footer__credit">
+          © {new Date().getFullYear()} Özgerim Holding. {photoCredits}
+        </p>
       </div>
     </footer>
   );
