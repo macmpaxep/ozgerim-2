@@ -7,7 +7,7 @@ export function Directions() {
     <section id="directions" className="section">
       <div className="wrap">
         <h2 className="h2 statement">
-          Наши компании и проекты разделены на пять направлений
+          Наши компании и проекты разделены на шесть направлений
         </h2>
         <div className="cards">
           {directions.map((d) => {

@@ -45,7 +45,7 @@ export const company = {
 };
 
 export const holdingStats = [
-  { value: 5, suffix: "", label: "направлений холдинга" },
+  { value: 6, suffix: "", label: "направлений холдинга" },
   { value: 20, suffix: "+", label: "реализованных проектов" },
   { value: 12, suffix: "+", label: "лет опыта команды" },
   { value: 3, suffix: "", label: "страны присутствия" },
@@ -60,7 +60,7 @@ export const person = {
   ],
   photo: "/images/aibar.jpg",
   bio: [
-    "Айбар Абилов — президент холдинга Özgerim Holding и венчурный инвестор. Под его руководством холдинг объединяет пять направлений: хедж-фонды, инвестиции в недвижимость, строительство, благотворительность и издание книг.",
+    "Айбар Абилов — президент холдинга Özgerim Holding и венчурный инвестор. Под его руководством холдинг объединяет шесть направлений: хедж-фонды, венчурные инвестиции, инвестиции в недвижимость, строительство, благотворительность и издание книг.",
     "Он выстраивает экосистему, в которой капитал работает на создание ценности: от финансовых стратегий и девелопмента до образовательных и социальных инициатив.",
     "Со-автор книги «Тетрадь в клетку» — издания, в котором личный опыт превращается в практические принципы для предпринимателей и тех, кто только начинает свой путь.",
   ],
@@ -71,7 +71,7 @@ export const person = {
     { title: "Люди прежде всего", text: "Сильные команды и честные партнёрства — главный актив." },
   ],
   highlights: [
-    { value: "5", label: "направлений под управлением" },
+    { value: "6", label: "направлений под управлением" },
     { value: "VC", label: "венчурные инвестиции" },
     { value: "1", label: "книга в соавторстве" },
   ],
@@ -166,6 +166,23 @@ export const directions: Direction[] = [
         tags: ["Venture", "Hybrid", "Early-stage"],
       },
     ],
+  },
+  {
+    slug: "venture",
+    title: "Венчурные инвестиции",
+    short: "Венчур",
+    tagline: "Вкладываем в команды на ранней стадии",
+    description:
+      "Холдинг инвестирует в компании на ранней стадии: оценивает основателей, продукт и рынок, входит в раунды и сопровождает проекты в росте. Направление ведёт президент холдинга Айбар Абилов, венчурный инвестор.",
+    icon: "chart",
+    accent: "#4f8f7b",
+    focus: [
+      { title: "Ранние раунды", text: "Участие в раундах перспективных компаний, пока они только строят продукт." },
+      { title: "Отбор команд", text: "Оценка основателей, продукта и рынка до входа в проект." },
+      { title: "Сопровождение", text: "Помощь с наймом, выходом на рынки и следующими раундами." },
+    ],
+    stats: [],
+    projects: [],
   },
   {
     slug: "real-estate",
@@ -420,12 +437,13 @@ export const allProjects = directions.flatMap((d) =>
 /** Фото-заглушки (Wikimedia Commons). Заменить собственными фотографиями холдинга. */
 export const photos = {
   hero: { src: "/images/stock/photo-f179168349.jpg", w: 1280, h: 719, alt: "Панорама Алматы с видом на горы" },
-  "hedge-funds": { src: "/images/stock/photo-f61879170.jpg", w: 1280, h: 853, alt: "Тёмный стеклянный фасад офисной башни" },
-  "real-estate": { src: "/images/stock/photo-f122080046.jpg", w: 1280, h: 853, alt: "Жилой дом с балконами в солнечный день" },
+  "hedge-funds": { src: "/images/stock/photo-f15411625-960.jpg", w: 960, h: 454, alt: "Деловой центр с небоскрёбами ночью" },
+  venture: { src: "/images/stock/photo-f102345379-960.jpg", w: 960, h: 638, alt: "Программный код на экране ноутбука" },
+  "real-estate": { src: "/images/stock/photo-f126527571-960.jpg", w: 960, h: 640, alt: "Жилые башни со стеклянными фасадами в сумерках" },
   construction: { src: "/images/stock/photo-f76729030.jpg", w: 1280, h: 1085, alt: "Башенный кран над строящимся зданием" },
   charity: { src: "/images/stock/photo-f149479222-960.jpg", w: 960, h: 722, alt: "Школьный класс с партами и доской" },
   publishing: { src: "/images/stock/photo-f194784524-960.jpg", w: 960, h: 640, alt: "Стеллажи с книгами в библиотеке" },
 } as const;
 
 export const photoCredits =
-  "Фото: Dauren Nabijan (CC0), Mike Wilson (CC0), Liilia Moroz (CC BY-SA 4.0), Henning Schlottmann (CC BY-SA 4.0), Harrison Keely (CC BY 4.0), Shixart1985 (CC BY 2.0) — Wikimedia Commons";
+  "Фото: Dauren Nabijan (CC0), chensiyuan (CC BY-SA 4.0), Wilfredor (CC0), luis gomes (CC0), Henning Schlottmann (CC BY-SA 4.0), Harrison Keely (CC BY 4.0), Shixart1985 (CC BY 2.0) — Wikimedia Commons";

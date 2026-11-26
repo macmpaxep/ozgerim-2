@@ -66,9 +66,10 @@ export default async function DirectionPage(props: PageProps<"/directions/[slug]
           </div>
         </div>
 
+        {d.stats.length > 0 && (
         <section className="section section--deep" aria-label="Показатели направления">
           <div className="wrap">
-            <dl className="numbers" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+            <dl className="numbers" style={{ gridTemplateColumns: `repeat(${d.stats.length}, 1fr)` }}>
               {d.stats.map((s) => (
                 <div key={s.label}>
                   <dt>{s.value}</dt>
@@ -78,6 +79,7 @@ export default async function DirectionPage(props: PageProps<"/directions/[slug]
             </dl>
           </div>
         </section>
+        )}
 
         <section className="section">
           <div className="wrap">
@@ -96,6 +98,7 @@ export default async function DirectionPage(props: PageProps<"/directions/[slug]
           </div>
         </section>
 
+        {d.projects.length > 0 && (
         <section className="section section--soft">
           <div className="wrap">
             <div className="list__head">
@@ -125,6 +128,7 @@ export default async function DirectionPage(props: PageProps<"/directions/[slug]
             </ul>
           </div>
         </section>
+        )}
 
         <nav className="pager" aria-label="Другие направления">
           <Link href={`/directions/${prev.slug}`}>

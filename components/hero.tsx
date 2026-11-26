@@ -16,7 +16,7 @@ export function Hero() {
           </h1>
           <div className="hero__meta">
             <Link href="/#directions" className="pill pill--glass">
-              Пять направлений холдинга
+              Шесть направлений холдинга
             </Link>
             <Link href="/#contact" className="pill pill--glass">
               Написать в холдинг
