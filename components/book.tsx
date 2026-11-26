@@ -1,46 +1,39 @@
 import Image from "next/image";
-import Link from "next/link";
 import { book, company } from "@/lib/data";
 
 export function Book() {
   return (
     <section id="book" className="section">
       <div className="wrap">
-        <div className="split" style={{ alignItems: "center" }}>
-          <div className="photo split__photo" style={{ aspectRatio: "3 / 4" }}>
+        <div className="bookhead">
+          <div className="photo bookhead__photo">
             <Image
               src="/images/book.webp"
               width={1500}
               height={2000}
               alt={`Книга «${book.title}» на рабочем столе`}
-              sizes="(max-width: 860px) 100vw, 40vw"
+              sizes="(max-width: 640px) 100vw, 420px"
             />
           </div>
-          <div>
-            <p className="small">Издательство</p>
-            <h2 className="h2" style={{ marginTop: 8 }}>
-              Книга «{book.title}»
-            </h2>
-            <p className="body" style={{ marginTop: 20, maxWidth: "26em", color: "var(--ink)" }}>
-              {book.subtitle}
-            </p>
-            <p className="small" style={{ marginTop: 16 }}>
-              {book.note}
-            </p>
-            <p className="small" style={{ marginTop: 16 }}>
-              Авторы: {book.authors}
-            </p>
-            <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 12 }}>
-              <a href="#contact" className="pill">
-                Заказать книгу
-              </a>
-              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
-                Написать в WhatsApp
-              </a>
-              <Link href="/directions/publishing" className="pill">
-                Все издания
-              </Link>
-            </div>
+          <p className="small" style={{ marginTop: 40 }}>
+            Издательство
+          </p>
+          <h2 className="h2" style={{ marginTop: 8 }}>
+            Книга «{book.title}»
+          </h2>
+          <p className="body" style={{ marginTop: 20, maxWidth: "26em", color: "var(--ink)" }}>
+            {book.subtitle}
+          </p>
+          <p className="small" style={{ marginTop: 16 }}>
+            {book.note}
+          </p>
+          <p className="small" style={{ marginTop: 16 }}>
+            Авторы: {book.authors}
+          </p>
+          <div style={{ marginTop: 32 }}>
+            <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
+              Заказать книгу
+            </a>
           </div>
         </div>
 
