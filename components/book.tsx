@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { book } from "@/lib/data";
+import { book, company } from "@/lib/data";
 
 export function Book() {
   return (
@@ -33,6 +33,9 @@ export function Book() {
             <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 12 }}>
               <a href="#contact" className="pill">
                 Заказать книгу
+              </a>
+              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
+                Написать в WhatsApp
               </a>
               <Link href="/directions/publishing" className="pill">
                 Все издания
