@@ -29,6 +29,7 @@ jobs:
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
         run: |
-          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" "deploy@$DEPLOY_HOST" \
+          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" \
             'cd /var/www/ozgerim && git fetch origin main && git reset --hard origin/main && npm ci && npm run build && pm2 restart ozgerim'
