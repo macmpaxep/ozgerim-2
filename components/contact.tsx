@@ -2,12 +2,9 @@ import { company } from "@/lib/data";
 
 export function Contact() {
   return (
-    <section id="contact" className="section section--night on-night">
+    <section id="contact" className="section section--deep">
       <div className="wrap">
-        <p className="kicker" style={{ color: "var(--night-muted)" }}>
-          Контакты
-        </p>
-        <h2 className="h2" style={{ marginTop: 12, maxWidth: "20em" }}>
+        <h2 className="h2" style={{ maxWidth: "18em" }}>
           Инвестиции, совместные проекты, издательские и благотворительные инициативы
         </h2>
         <a href={`mailto:${company.email}`} className="contact__mail">
@@ -17,9 +14,7 @@ export function Contact() {
           <div>
             <dt>Телефон</dt>
             <dd>
-              <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="link">
-                {company.phone}
-              </a>
+              <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
             </dd>
           </div>
           <div>

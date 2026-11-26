@@ -12,29 +12,31 @@ export function Founder() {
               width={900}
               height={1125}
               alt={`${person.name}, президент Özgerim Holding`}
-              sizes="(max-width: 860px) 100vw, 35vw"
+              sizes="(max-width: 860px) 100vw, 40vw"
             />
           </div>
           <div>
-            <p className="kicker">Президент холдинга</p>
-            <h2 className="h2" style={{ marginTop: 12 }}>
+            <p className="small">Президент холдинга</p>
+            <h2 className="h2" style={{ marginTop: 8 }}>
               {person.name}
             </h2>
-            <ul className="roles" style={{ listStyle: "none", padding: 0 }}>
+            <ul className="roles small">
               {person.roles.map((r) => (
                 <li key={r}>{r}</li>
               ))}
             </ul>
-            <div style={{ marginTop: 28, display: "grid", gap: 16, maxWidth: "40em" }}>
+            <div style={{ marginTop: 32, display: "grid", gap: 16, maxWidth: "36em" }}>
               {person.bio.map((t) => (
-                <p key={t}>{t}</p>
+                <p key={t} className="body" style={{ fontSize: "1.1rem", lineHeight: 1.5 }}>
+                  {t}
+                </p>
               ))}
             </div>
             <div className="principles">
               {person.principles.map((p) => (
                 <div key={p.title}>
                   <h3>{p.title}</h3>
-                  <p>{p.text}</p>
+                  <p className="small">{p.text}</p>
                 </div>
               ))}
             </div>

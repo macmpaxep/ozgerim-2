@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
 import { company } from "@/lib/data";
 
-const sans = IBM_Plex_Sans({
+const sans = Onest({
   variable: "--font-sans",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500"],
-});
-
-const serif = Source_Serif_4({
-  variable: "--font-serif",
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -32,12 +26,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5f3ee",
+  themeColor: "#173545",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ru" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="ru" className={sans.variable}>
       <body>
         <a href="#main" className="skip">
           К содержанию

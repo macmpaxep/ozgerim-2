@@ -1,5 +1,5 @@
 import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
+import { Hero, Intro } from "@/components/hero";
 import { Directions, Numbers } from "@/components/directions";
 import { Founder } from "@/components/founder";
 import { Portfolio } from "@/components/portfolio";
@@ -13,6 +13,7 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
+        <Intro />
         <Directions />
         <Numbers />
         <Founder />

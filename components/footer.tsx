@@ -3,14 +3,12 @@ import { directions, company, photoCredits } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="footer on-night">
+    <footer className="footer">
       <div className="wrap">
         <div className="footer__grid">
           <div>
-            <span className="logo">
-              Özgerim <small style={{ color: "var(--night-muted)" }}>Holding</small>
-            </span>
-            <p style={{ marginTop: 12, maxWidth: "26em", color: "var(--night-muted)", fontSize: "0.95rem" }}>
+            <span className="logo">özgerim</span>
+            <p style={{ marginTop: 12, maxWidth: "26em", color: "rgba(255,255,255,0.7)", fontSize: "0.95rem" }}>
               Фонды, недвижимость, строительство, социальные проекты и издательство.
             </p>
           </div>

@@ -1,35 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { directions, photos } from "@/lib/data";
 
 export function Directions() {
   return (
-    <section id="directions" className="section section--white">
+    <section id="directions" className="section">
       <div className="wrap">
-        <div className="head">
-          <h2 className="h2">Пять направлений холдинга</h2>
-          <p className="lede">
-            Каждое направление ведёт отдельная команда. Общие — стандарты отчётности и подход к
-            рискам.
-          </p>
-        </div>
-
-        <div className="ledger">
-          {directions.map((d, i) => {
+        <h2 className="h2 statement">
+          Наши компании и проекты разделены на пять направлений
+        </h2>
+        <div className="cards">
+          {directions.map((d) => {
             const p = photos[d.slug as keyof typeof photos];
             return (
-              <Link key={d.slug} href={`/directions/${d.slug}`} className="ledger__row">
-                <span className="ledger__no">0{i + 1}</span>
-                <div>
-                  <h3 className="h3">{d.title}</h3>
-                  <p style={{ marginTop: 4 }}>{d.short}</p>
-                </div>
-                <p>{d.tagline}</p>
+              <Link key={d.slug} href={`/directions/${d.slug}`} className="card">
                 <div className="photo">
-                  <Image src={p.src} width={p.w} height={p.h} alt={p.alt} sizes="(max-width: 860px) 100vw, 220px" />
+                  <Image
+                    src={p.src}
+                    width={p.w}
+                    height={p.h}
+                    alt={p.alt}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 20vw"
+                  />
+                  <span className="tag">{d.short}</span>
                 </div>
-                <ArrowRight className="ledger__arrow" size={20} aria-hidden />
+                <h3 className="h3">{d.title}</h3>
+                <p className="small">{d.tagline}</p>
               </Link>
             );
           })}
@@ -47,12 +43,11 @@ export function Numbers() {
     { v: "9", l: "объектов недвижимости в портфеле" },
   ];
   return (
-    <section className="section section--night on-night" aria-label="Холдинг в цифрах">
+    <section className="section section--deep" aria-label="Холдинг в цифрах">
       <div className="wrap">
-        <div className="head">
-          <h2 className="h2">Что холдинг сделал к сегодняшнему дню</h2>
-          <p className="lede">Показатели по направлениям на последнюю отчётную дату.</p>
-        </div>
+        <h2 className="h2" style={{ maxWidth: "16em", marginBottom: 72 }}>
+          Что холдинг сделал к сегодняшнему дню
+        </h2>
         <dl className="numbers">
           {rows.map((r) => (
             <div key={r.l}>

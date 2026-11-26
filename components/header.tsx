@@ -13,11 +13,7 @@ const links = [
 ];
 
 export function Logo() {
-  return (
-    <span className="logo">
-      Özgerim <small>Holding</small>
-    </span>
-  );
+  return <span className="logo">özgerim</span>;
 }
 
 export function Header() {
@@ -33,15 +29,11 @@ export function Header() {
 
           <nav className="nav" aria-label="Основное меню">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="link">
+              <Link key={l.href} href={l.href}>
                 {l.label}
               </Link>
             ))}
           </nav>
-
-          <Link href="/#contact" className="btn btn--header">
-            Написать в холдинг
-          </Link>
 
           <button
             className="menu-btn"

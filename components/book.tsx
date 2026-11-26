@@ -5,7 +5,7 @@ export function Book() {
   return (
     <section id="book" className="section">
       <div className="wrap">
-        <div className="split" style={{ gridTemplateColumns: "0.8fr 1.2fr", alignItems: "center" }}>
+        <div className="split" style={{ alignItems: "center" }}>
           <div className="cover" role="img" aria-label={`Обложка книги «${book.title}»`}>
             <span>Özgerim</span>
             <b>
@@ -18,18 +18,18 @@ export function Book() {
             </span>
           </div>
           <div>
-            <p className="kicker">Издательство</p>
-            <h2 className="h2" style={{ marginTop: 12 }}>
+            <p className="small">Издательство</p>
+            <h2 className="h2" style={{ marginTop: 8 }}>
               Книга «{book.title}»
             </h2>
-            <p className="lede" style={{ marginTop: 20 }}>
+            <p className="body" style={{ marginTop: 20, maxWidth: "26em" }}>
               {book.subtitle}. Авторы: {book.authors}.
             </p>
-            <div className="hero__actions">
-              <a href="#contact" className="btn">
+            <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 12 }}>
+              <a href="#contact" className="pill">
                 Заказать книгу
               </a>
-              <Link href="/directions/publishing" className="btn btn--line">
+              <Link href="/directions/publishing" className="pill">
                 Все издания
               </Link>
             </div>
