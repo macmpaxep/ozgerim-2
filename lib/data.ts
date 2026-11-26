@@ -80,7 +80,7 @@ export const person = {
 export const book = {
   title: "Тетрадь в клетку",
   subtitle: "Книга о том, как из маленьких шагов складывается большое дело",
-  authors: "Айбар Абилов и соавторы",
+  authors: "Айбар Абилов и Каныш Абилов",
 };
 
 export const directions: Direction[] = [
@@ -352,7 +352,7 @@ export const directions: Direction[] = [
         year: "—",
         status: "done",
         kind: "Бизнес-книга",
-        metric: { label: "Автор", value: "А. Абилов и соавторы" },
+        metric: { label: "Автор", value: "А. Абилов и К. Абилов" },
         summary: "Книга о предпринимательском пути, дисциплине и принципах, которые превращают мелкие шаги в большие результаты.",
         tags: ["Бизнес", "Личный опыт"],
       },
