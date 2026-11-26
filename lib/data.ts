@@ -37,8 +37,9 @@ export type Direction = {
 
 export const company = {
   name: "Özgerim Holding",
-  email: "info@ozgerim.com",
-  phone: "+7 000 000 00 00",
+  email: "ozgerim@proton.me",
+  phone: "+7 775 392 80 56",
+  whatsapp: "https://wa.me/77753928056",
   city: "Алматы · Лондон",
   site: "https://ozgerim.vercel.app",
 };

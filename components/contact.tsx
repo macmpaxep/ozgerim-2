@@ -14,7 +14,9 @@ export function Contact() {
           <div>
             <dt>Телефон</dt>
             <dd>
-              <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
+              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+                {company.phone}
+              </a>
             </dd>
           </div>
           <div>

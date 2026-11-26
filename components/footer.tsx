@@ -32,7 +32,9 @@ export function Footer() {
                 <a href={`mailto:${company.email}`}>{company.email}</a>
               </li>
               <li>
-                <span>{company.phone}</span>
+                <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+                  {company.phone}
+                </a>
               </li>
             </ul>
           </div>
