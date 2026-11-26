@@ -9,9 +9,9 @@ export function Book() {
           <div className="photo bookhead__photo">
             <Image
               src="/images/book.webp"
-              width={1500}
+              width={1333}
               height={2000}
-              alt={`Книга «${book.title}» на рабочем столе`}
+              alt={`Книга «${book.title}»`}
               sizes="(max-width: 860px) 100vw, 420px"
             />
           </div>

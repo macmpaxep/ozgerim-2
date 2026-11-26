@@ -747,7 +747,7 @@ a:hover .photo img,
 }
 .bookhead__photo {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   border-radius: 6px;
 }
 @media (max-width: 860px) {
@@ -835,7 +835,7 @@ a:hover .photo img,
   margin-top: 36px;
 }
 .bookhero__photo {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   border-radius: 6px;
 }
 @media (max-width: 860px) {
