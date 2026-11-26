@@ -10,6 +10,11 @@ export function Contact() {
         <a href={`mailto:${company.email}`} className="contact__mail">
           {company.email}
         </a>
+        <div style={{ marginTop: 32 }}>
+          <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
+            Написать в WhatsApp
+          </a>
+        </div>
         <dl className="contact__rows">
           <div>
             <dt>Телефон</dt>
