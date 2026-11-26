@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { book, company } from "@/lib/data";
+import { book, bookOrderUrl } from "@/lib/data";
 
 export function Book() {
   return (
@@ -30,14 +30,22 @@ export function Book() {
               Авторы: {book.authors}
             </p>
             <div style={{ marginTop: 32 }}>
-              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
+              <a href={bookOrderUrl} target="_blank" rel="noopener noreferrer" className="pill">
                 Заказать книгу
               </a>
             </div>
           </div>
         </div>
 
-        <div className="qa">
+        <Questions />
+      </div>
+    </section>
+  );
+}
+
+export function Questions() {
+  return (
+    <div className="qa">
           <div className="qa__head">
             <h3 className="h2">{book.questionsTitle}</h3>
             <p className="small">{book.questionsLead}</p>
@@ -52,7 +60,5 @@ export function Book() {
             ))}
           </ol>
         </div>
-      </div>
-    </section>
   );
 }

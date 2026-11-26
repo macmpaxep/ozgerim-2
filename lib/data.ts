@@ -41,7 +41,7 @@ export const company = {
   phone: "+7 775 392 80 56",
   whatsapp: "https://wa.me/77753928056",
   city: "Алматы · Лондон",
-  site: "https://ozgerim.vercel.app",
+  site: "https://ozgerim-2.vercel.app",
 };
 
 export const holdingStats = [
@@ -76,6 +76,8 @@ export const person = {
     { value: "1", label: "книга в соавторстве" },
   ],
 };
+
+export const bookOrderUrl = `https://wa.me/77753928056?text=${encodeURIComponent("Пишу из сайта, как купить книгу?")}`;
 
 export const book = {
   title: "Тетрадь в клетку",

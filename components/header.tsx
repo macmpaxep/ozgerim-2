@@ -16,7 +16,7 @@ export function Logo() {
   return <span className="logo">özgerim</span>;
 }
 
-export function Header() {
+export function Header({ action }: { action?: { href: string; label: string } }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -27,25 +27,35 @@ export function Header() {
             <Logo />
           </Link>
 
-          <nav className="nav" aria-label="Основное меню">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href}>
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+          {action ? (
+            <a href={action.href} target="_blank" rel="noopener noreferrer" className="pill pill--glass">
+              {action.label}
+            </a>
+          ) : null}
 
-          <button
-            className="menu-btn"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Закрыть меню" : "Открыть меню"}
-            aria-expanded={open}
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {!action && (
+            <nav className="nav" aria-label="Основное меню">
+              {links.map((l) => (
+                <Link key={l.href} href={l.href}>
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+          )}
+
+          {!action && (
+            <button
+              className="menu-btn"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Закрыть меню" : "Открыть меню"}
+              aria-expanded={open}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          )}
         </div>
 
-        {open && (
+        {open && !action && (
           <nav className="nav-mobile" aria-label="Мобильное меню">
             {links.map((l) => (
               <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
