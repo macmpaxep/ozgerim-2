@@ -746,8 +746,9 @@ a:hover .photo img,
   gap: clamp(32px, 6vw, 88px);
 }
 .bookhead__photo {
+  display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 1 / 1;
   border-radius: 6px;
 }
 @media (max-width: 860px) {
@@ -834,8 +835,10 @@ a:hover .photo img,
 .bookhero__cta {
   margin-top: 36px;
 }
+.bookhead__title { color: inherit; text-decoration: none; }
+.bookhead__title:hover { text-decoration: underline; text-underline-offset: 0.12em; text-decoration-thickness: 1px; }
 .bookhero__photo {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 1 / 1;
   border-radius: 6px;
 }
 @media (max-width: 860px) {

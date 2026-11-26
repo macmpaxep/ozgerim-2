@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     url: `${company.site}/book`,
-    images: [{ url: "/images/book.webp", width: 1333, height: 2000, alt: "Книга «Тетрадь в клетку»" }],
+    images: [{ url: "/images/book-desk.webp", width: 1254, height: 1254, alt: "Книга «Тетрадь в клетку»" }],
   },
 };
 
@@ -45,10 +45,10 @@ export default function BookPage() {
               </div>
               <div className="photo bookhero__photo" data-enter>
                 <Image
-                  src="/images/book.webp"
-                  width={1333}
-                  height={2000}
-                  alt="Книга «Тетрадь в клетку»"
+                  src="/images/book-desk.webp"
+                  width={1254}
+                  height={1254}
+                  alt="Книга «Тетрадь в клетку» на рабочем столе"
                   priority
                   sizes="(max-width: 860px) 100vw, 480px"
                 />

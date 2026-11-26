@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { book, bookOrderUrl } from "@/lib/data";
 
 export function Book() {
@@ -6,19 +7,21 @@ export function Book() {
     <section id="book" className="section">
       <div className="wrap">
         <div className="bookhead">
-          <div className="photo bookhead__photo">
+          <Link href="/book" className="photo bookhead__photo" aria-label={`Книга «${book.title}» — страница книги`}>
             <Image
-              src="/images/book.webp"
-              width={1333}
-              height={2000}
-              alt={`Книга «${book.title}»`}
+              src="/images/book-desk.webp"
+              width={1254}
+              height={1254}
+              alt={`Книга «${book.title}» на рабочем столе`}
               sizes="(max-width: 860px) 100vw, 420px"
             />
-          </div>
+          </Link>
           <div className="bookhead__text">
-            <p className="small">Издательство</p>
+            <p className="small">Издательство Özgerim</p>
             <h2 className="h2" style={{ marginTop: 8 }}>
-              Книга «{book.title}»
+              <Link href="/book" className="bookhead__title">
+                Книга «{book.title}»
+              </Link>
             </h2>
             <p className="body" style={{ marginTop: 20, color: "var(--ink)" }}>
               {book.subtitle}
