@@ -737,15 +737,21 @@ a:hover .photo img,
 
 /* book: centred head + four questions in a row */
 .bookhead {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 480px);
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  gap: clamp(32px, 6vw, 88px);
 }
 .bookhead__photo {
-  width: min(100%, 420px);
+  width: 100%;
   aspect-ratio: 3 / 4;
   border-radius: 6px;
+}
+@media (max-width: 860px) {
+  .bookhead {
+    grid-template-columns: minmax(0, 480px);
+  }
 }
 .qa {
   margin-top: clamp(72px, 9vw, 128px);

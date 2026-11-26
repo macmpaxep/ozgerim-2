@@ -12,28 +12,28 @@ export function Book() {
               width={1500}
               height={2000}
               alt={`Книга «${book.title}» на рабочем столе`}
-              sizes="(max-width: 640px) 100vw, 420px"
+              sizes="(max-width: 860px) 100vw, 420px"
             />
           </div>
-          <p className="small" style={{ marginTop: 40 }}>
-            Издательство
-          </p>
-          <h2 className="h2" style={{ marginTop: 8 }}>
-            Книга «{book.title}»
-          </h2>
-          <p className="body" style={{ marginTop: 20, maxWidth: "26em", color: "var(--ink)" }}>
-            {book.subtitle}
-          </p>
-          <p className="small" style={{ marginTop: 16 }}>
-            {book.note}
-          </p>
-          <p className="small" style={{ marginTop: 16 }}>
-            Авторы: {book.authors}
-          </p>
-          <div style={{ marginTop: 32 }}>
-            <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
-              Заказать книгу
-            </a>
+          <div className="bookhead__text">
+            <p className="small">Издательство</p>
+            <h2 className="h2" style={{ marginTop: 8 }}>
+              Книга «{book.title}»
+            </h2>
+            <p className="body" style={{ marginTop: 20, color: "var(--ink)" }}>
+              {book.subtitle}
+            </p>
+            <p className="small" style={{ marginTop: 16 }}>
+              {book.note}
+            </p>
+            <p className="small" style={{ marginTop: 16 }}>
+              Авторы: {book.authors}
+            </p>
+            <div style={{ marginTop: 32 }}>
+              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">
+                Заказать книгу
+              </a>
+            </div>
           </div>
         </div>
 
