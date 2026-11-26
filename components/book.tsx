@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { book } from "@/lib/data";
 
@@ -6,16 +7,14 @@ export function Book() {
     <section id="book" className="section">
       <div className="wrap">
         <div className="split" style={{ alignItems: "center" }}>
-          <div className="cover" role="img" aria-label={`Обложка книги «${book.title}»`}>
-            <span>Özgerim</span>
-            <b>
-              Тетрадь
-              <br />в клетку
-            </b>
-            <span>
-              А. Абилов
-              <br />и соавторы
-            </span>
+          <div className="photo split__photo" style={{ aspectRatio: "3 / 4" }}>
+            <Image
+              src="/images/book.webp"
+              width={1500}
+              height={2000}
+              alt={`Книга «${book.title}» на рабочем столе`}
+              sizes="(max-width: 860px) 100vw, 40vw"
+            />
           </div>
           <div>
             <p className="small">Издательство</p>
