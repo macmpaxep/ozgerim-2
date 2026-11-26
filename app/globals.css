@@ -888,3 +888,8 @@ a:hover .photo img,
     padding-bottom: 80px;
   }
 }
+
+/* the questions block needs its own top gap only when it follows the book photo */
+.wrap > .qa:first-child {
+  margin-top: 0;
+}
