@@ -21,8 +21,14 @@ export function Book() {
             <h2 className="h2" style={{ marginTop: 8 }}>
               Книга «{book.title}»
             </h2>
-            <p className="body" style={{ marginTop: 20, maxWidth: "26em" }}>
-              {book.subtitle}. Авторы: {book.authors}.
+            <p className="body" style={{ marginTop: 20, maxWidth: "26em", color: "var(--ink)" }}>
+              {book.subtitle}
+            </p>
+            <p className="small" style={{ marginTop: 16 }}>
+              {book.note}
+            </p>
+            <p className="small" style={{ marginTop: 16 }}>
+              Авторы: {book.authors}
             </p>
             <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 12 }}>
               <a href="#contact" className="pill">
@@ -33,6 +39,22 @@ export function Book() {
               </Link>
             </div>
           </div>
+        </div>
+
+        <div className="qa">
+          <div className="qa__head">
+            <h3 className="h2">{book.questionsTitle}</h3>
+            <p className="small">{book.questionsLead}</p>
+          </div>
+          <ol className="qa__list">
+            {book.questions.map((q, i) => (
+              <li key={q.title}>
+                <span className="qa__no">0{i + 1}</span>
+                <h4 className="h3">{q.title}</h4>
+                <p className="small">{q.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

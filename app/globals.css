@@ -734,3 +734,48 @@ a:hover .photo img,
     transition: none;
   }
 }
+
+/* book: questions */
+.qa {
+  margin-top: clamp(64px, 8vw, 112px);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+.qa__head p {
+  margin-top: 12px;
+}
+.qa__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+}
+.qa__list li {
+  border-top: 1px solid var(--line);
+  padding: 20px 0 36px;
+}
+.qa__no {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.qa__list p {
+  margin-top: 10px;
+}
+@media (max-width: 960px) {
+  .qa {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .qa__list {
+    grid-template-columns: 1fr;
+  }
+  .qa__no {
+    margin-bottom: 12px;
+  }
+}
