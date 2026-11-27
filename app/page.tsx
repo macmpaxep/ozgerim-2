@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Hero, Intro } from "@/components/hero";
 import { Directions, Numbers } from "@/components/directions";
 import { Founder } from "@/components/founder";
+import { Press } from "@/components/press";
 import { Portfolio } from "@/components/portfolio";
 import { Book } from "@/components/book";
 import { Contact } from "@/components/contact";
@@ -17,6 +18,7 @@ export default function Home() {
         <Directions />
         <Numbers />
         <Founder />
+        <Press />
         <Portfolio />
         <Book />
         <Contact />
