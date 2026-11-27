@@ -77,7 +77,7 @@ export const person = {
   ],
 };
 
-// Что пишут о нас в медиа. Адреса ведут на главную besconnect.com — замените на ссылки конкретных страниц.
+// Что пишут о нас в медиа. Новая публикация — ещё один объект в списке.
 export const media = [
   {
     source: "besconnect.com",
@@ -85,7 +85,7 @@ export const media = [
     title: "Айбар Абилов",
     lead: "Президент Özgerim Holding, венчурный инвестор",
     text: "Айбар Абилов — президент холдинга Özgerim Holding и венчурный инвестор. Под его руководством холдинг объединяет шесть направлений: хедж-фонды, венчурные инвестиции, инвестиции в недвижимость, строительство, благотворительность и издание книг.",
-    url: "https://besconnect.com",
+    url: "https://besconnect.com/ru/people/aibar-abilov",
   },
   {
     source: "besconnect.com",
@@ -93,7 +93,7 @@ export const media = [
     title: "Özgerim Holding",
     lead: "Инвестиционный холдинг: фонды, недвижимость, строительство",
     text: "Инвестиционный холдинг с офисами в Алматы и Лондоне. Холдинг объединяет шесть направлений, а руководит им Айбар Абилов.",
-    url: "https://besconnect.com",
+    url: "https://besconnect.com/ru/companies/ozgerim-holding",
   },
 ];
 
