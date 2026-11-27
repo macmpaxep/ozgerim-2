@@ -41,7 +41,7 @@ export const company = {
   phone: "+7 775 392 80 56",
   whatsapp: "https://wa.me/77753928056",
   city: "Алматы · Лондон",
-  site: "https://ozgerim-2.vercel.app",
+  site: "https://ozgerim.com",
 };
 
 export const holdingStats = [
