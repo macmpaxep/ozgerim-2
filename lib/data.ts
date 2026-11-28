@@ -77,6 +77,8 @@ export const person = {
   ],
 };
 
+export const essOrderUrl = `https://wa.me/77753928056?text=${encodeURIComponent("Здравствуйте! Хочу узнать про программу обучения финансам в Турции.")}`;
+
 // Что пишут о нас в медиа. Новая публикация — ещё один объект в списке.
 export const media = [
   {

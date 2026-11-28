@@ -28,7 +28,11 @@ export function Header({ action }: { action?: { href: string; label: string } })
           </Link>
 
           {action ? (
-            <a href={action.href} target="_blank" rel="noopener noreferrer" className="pill pill--glass">
+            <a
+              href={action.href}
+              {...(action.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="pill pill--glass"
+            >
               {action.label}
             </a>
           ) : null}
