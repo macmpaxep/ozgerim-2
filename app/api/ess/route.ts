@@ -37,18 +37,13 @@ export async function POST(request: Request) {
 
   const name = clean(body.name, 120);
   const phone = clean(body.phone, 40);
-  const email = clean(body.email, 120);
   const city = clean(body.city, 80);
   const study = clean(body.study, 40);
   const level = clean(body.level, 60);
-  const comment = clean(body.comment, 1000);
 
   if (name.length < 2) return Response.json({ error: "Укажите имя" }, { status: 400 });
   if (phone.replace(/\D/g, "").length < 10) {
     return Response.json({ error: "Укажите телефон с кодом страны" }, { status: 400 });
-  }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return Response.json({ error: "Проверьте email" }, { status: 400 });
   }
   if (body.consent !== true) {
     return Response.json({ error: "Нужно согласие на обработку данных" }, { status: 400 });
@@ -58,22 +53,18 @@ export async function POST(request: Request) {
     at: new Date().toISOString(),
     name,
     phone,
-    email,
     city,
     study: CITIES.includes(study) ? study : "",
     level: LEVELS.includes(level) ? level : "",
-    comment,
   };
 
   const text = [
     "Новая заявка на обучение финансам в Турции",
     `Имя: ${application.name}`,
     `Телефон: ${application.phone}`,
-    application.email && `Email: ${application.email}`,
     application.city && `Город: ${application.city}`,
     application.study && `Где учиться: ${application.study}`,
     application.level && `Опыт в финансах: ${application.level}`,
-    application.comment && `Комментарий: ${application.comment}`,
   ]
     .filter(Boolean)
     .join("\n");

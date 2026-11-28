@@ -22,11 +22,9 @@ export function EssForm() {
         body: JSON.stringify({
           name: f.get("name"),
           phone: f.get("phone"),
-          email: f.get("email"),
           city: f.get("city"),
           study: f.get("study"),
           level: f.get("level"),
-          comment: f.get("comment"),
           website: f.get("website"),
           consent: f.get("consent") === "on",
         }),
@@ -70,10 +68,6 @@ export function EssForm() {
           />
         </label>
         <label className="field">
-          <span>Email</span>
-          <input name="email" type="email" autoComplete="email" maxLength={120} />
-        </label>
-        <label className="field">
           <span>Город проживания</span>
           <input name="city" type="text" autoComplete="address-level2" maxLength={80} />
         </label>
@@ -86,7 +80,7 @@ export function EssForm() {
             <option>Пока не решил(а)</option>
           </select>
         </label>
-        <label className="field">
+        <label className="field field--wide">
           <span>Опыт в финансах</span>
           <select name="level" defaultValue="">
             <option value="">Выберите</option>
@@ -94,10 +88,6 @@ export function EssForm() {
             <option>Немного разбираюсь</option>
             <option>Работаю или учусь в финансах</option>
           </select>
-        </label>
-        <label className="field field--wide">
-          <span>Расскажите о себе и о том, чего ждёте от программы</span>
-          <textarea name="comment" rows={4} maxLength={1000} />
         </label>
       </div>
 
