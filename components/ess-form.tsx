@@ -119,7 +119,7 @@ export function EssForm() {
           {status === "sending" ? "Отправляем…" : "Отправить заявку"}
         </button>
         <a href={essOrderUrl} target="_blank" rel="noopener noreferrer" className="form__alt">
-          Или напишите в WhatsApp
+          Написать в WhatsApp
         </a>
       </div>
 

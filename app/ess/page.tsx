@@ -51,6 +51,9 @@ export default function EssPage() {
                 <a href="#form" className="pill pill--glass">
                   Подать заявку
                 </a>
+                <a href={essOrderUrl} target="_blank" rel="noopener noreferrer" className="pill pill--glass">
+                  Написать в WhatsApp
+                </a>
               </div>
             </div>
           </div>
