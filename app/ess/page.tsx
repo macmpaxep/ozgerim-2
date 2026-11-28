@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { company, essOrderUrl } from "@/lib/data";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -38,7 +39,7 @@ export default function EssPage() {
       <Header action={{ href: "#form", label: "Подать заявку" }} />
       <main id="main">
         <section className="esshero">
-          <div className="wrap">
+          <div className="wrap esshero__grid">
             <div className="esshero__body" data-enter>
               <p className="small esshero__kicker">Özgerim · Программа обучения</p>
               <h1 className="h1">Обучение финансам в Турции</h1>
@@ -55,6 +56,16 @@ export default function EssPage() {
                   Написать в WhatsApp
                 </a>
               </div>
+            </div>
+            <div className="photo esshero__photo" data-enter>
+              <Image
+                src="/images/ess-ege.webp"
+                width={1672}
+                height={941}
+                alt="Студенты у входа в кампус университета в Измире"
+                priority
+                sizes="(max-width: 860px) 100vw, 560px"
+              />
             </div>
           </div>
         </section>

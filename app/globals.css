@@ -956,8 +956,21 @@ a:hover .photo img,
   color: #fff;
   padding: 140px 0 clamp(56px, 7vw, 96px);
 }
+.esshero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+}
 .esshero__body {
-  max-width: 760px;
+  max-width: 640px;
+}
+.esshero__photo {
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+}
+.esshero__photo img {
+  object-position: 50% 60%;
 }
 .esshero__kicker {
   color: rgba(255, 255, 255, 0.7);
@@ -977,6 +990,12 @@ a:hover .photo img,
 @media (max-width: 860px) {
   .esshero {
     padding-top: 112px;
+  }
+  .esshero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .esshero__photo {
+    aspect-ratio: 16 / 10;
   }
 }
 .esscost {
